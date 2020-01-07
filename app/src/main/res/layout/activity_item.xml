@@ -10,6 +10,7 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/item_tab_layout"
         android:layout_width="match_parent"
+        android:background="#ffffff"
         android:layout_height="40dp">
 
         <com.google.android.material.tabs.TabItem
@@ -62,7 +63,7 @@
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:scaleType="fitCenter"
-            android:background="#f3f3f3"
+            android:background="#ffffff"
             android:padding="16dp"
             android:src="@drawable/item_svg"/>
 
@@ -72,7 +73,7 @@
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:scaleType="centerInside"
-            android:background="#f3f3f3"
+            android:background="#ffffff"
             android:onClick="Click_shopButton"
             android:src="@drawable/shop_svg"/>
 
@@ -82,7 +83,7 @@
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:scaleType="centerInside"
-            android:background="#f3f3f3"
+            android:background="#ffffff"
            android:padding="16dp"
             android:onClick="Click_measurementButton"
             android:src="@drawable/measurement_svg"/>
@@ -93,7 +94,7 @@
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:scaleType="centerInside"
-            android:background="#f3f3f3"
+            android:background="#ffffff"
             android:onClick="Click_wishlistButton"
             android:src="@drawable/wishlist_svg"/>
 
@@ -103,7 +104,7 @@
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:scaleType="centerInside"
-            android:background="#f3f3f3"
+            android:background="#ffffff"
             android:onClick="Click_mypageButton"
             android:src="@drawable/mypage_svg"/>
     </LinearLayout>
