@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f3f3f3"
+    tools:context=".MeasurementActivity">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <ImageButton
+            android:id="@+id/item_bottom_menu"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:background="#f3f3f3"
+            android:padding="16dp"
+
+            android:onClick="Click_itemButton"
+            android:src="@drawable/item_svg"/>
+
+        <ImageButton
+            android:id="@+id/shop_bottom_menu"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:background="#f3f3f3"
+            android:onClick="Click_shopButton"
+            android:src="@drawable/shop_svg"/>
+
+        <ImageButton
+            android:id="@+id/measurement_bottom_menu"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:background="#f3f3f3"
+            android:padding="16dp"
+            android:src="@drawable/measurement_svg"/>
+
+        <ImageButton
+            android:id="@+id/wishlist_bottom_menu"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:background="#f3f3f3"
+            android:onClick="Click_wishlistButton"
+            android:src="@drawable/wishlist_svg"/>
+
+        <ImageButton
+            android:id="@+id/mypage_bottom_menu"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:background="#f3f3f3"
+            android:onClick="Click_mypageButton"
+            android:src="@drawable/mypage_svg"/>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShopParentFragment" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MeasurementActivity"></activity>
+        <activity android:name=".WishlistActivity" />
+        <activity android:name=".MypageActivity" />
+        <activity android:name=".ShopActivity" />
+        <activity android:name=".ItemActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

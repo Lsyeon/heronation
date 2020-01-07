@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShopActivity">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/shop_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shop Ranking" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="즐겨찾기" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <!--Fragment가 나타나는 부분 -->
+    <FrameLayout
+        android:id="@+id/shop_fragment_container"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <ImageButton
+            android:id="@+id/item_bottom_menu"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:background="#f3f3f3"
+            android:padding="16dp"
+
+            android:onClick="Click_itemButton"
+            android:src="@drawable/item_svg"/>
+
+        <ImageButton
+            android:id="@+id/shop_bottom_menu"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:background="#f3f3f3"
+
+            android:src="@drawable/shop_svg"/>
+
+        <ImageButton
+            android:id="@+id/measurement_bottom_menu"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:background="#f3f3f3"
+            android:padding="16dp"
+            android:onClick="Click_measurementButton"
+            android:src="@drawable/measurement_svg"/>
+
+        <ImageButton
+            android:id="@+id/wishlist_bottom_menu"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:background="#f3f3f3"
+            android:onClick="Click_wishlistButton"
+            android:src="@drawable/wishlist_svg"/>
+
+        <ImageButton
+            android:id="@+id/mypage_bottom_menu"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:background="#f3f3f3"
+            android:onClick="Click_mypageButton"
+            android:src="@drawable/mypage_svg"/>
+    </LinearLayout>
+
+</RelativeLayout>
