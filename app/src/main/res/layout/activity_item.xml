@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f3f3f3"
     tools:context=".ItemActivity">
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f3f3f3">
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/item_tab_layout"
         android:layout_width="match_parent"
         android:background="#ffffff"
         android:layout_height="40dp">
-
-        <com.google.android.material.tabs.TabItem
+         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="홈" />
@@ -40,15 +42,13 @@
     </com.google.android.material.tabs.TabLayout>
 
     <!--Fragment가 나타나는 부분 -->
-    <FrameLayout
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/item_fragment_container"
         android:layout_alignParentTop="true"
         android:layout_marginTop="40dp"
         android:layout_above="@id/bottom_menu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-    </FrameLayout>
+        android:layout_height="match_parent"/>
 
     <LinearLayout
         android:id="@+id/bottom_menu"
@@ -109,3 +109,4 @@
             android:src="@drawable/mypage_svg"/>
     </LinearLayout>
 </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

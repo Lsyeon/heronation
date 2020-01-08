@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".WishlistActivity">
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <LinearLayout
         android:background="#ffffff"
         android:layout_width="match_parent"
@@ -50,15 +52,16 @@
     </LinearLayout>
 
     <!--Fragment가 나타나는 부분 -->
-    <FrameLayout
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/wishlist_fragment_container"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="40dp"
+        android:layout_above="@id/bottom_menu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-    </FrameLayout>
+        android:layout_height="match_parent"/>
 
     <LinearLayout
+        android:id="@+id/bottom_menu"
         android:layout_width="wrap_content"
         android:layout_height="56dp"
         android:orientation="horizontal"
@@ -116,5 +119,5 @@
             android:onClick="Click_mypageButton"
             android:src="@drawable/mypage_svg"/>
     </LinearLayout>
-
 </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

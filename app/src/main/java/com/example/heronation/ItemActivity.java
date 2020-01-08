@@ -3,6 +3,7 @@ package com.example.heronation;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -33,6 +34,10 @@ public class ItemActivity extends AppCompatActivity implements
     private ItemAiFragment itemAiFragment =new ItemAiFragment();
     private ItemSaleFragment itemSaleFragment =new ItemSaleFragment();
 
+    /* 프래그먼트 나타낼때, 프래그먼트를 담는 뷰페이저, 뷰페이저를 도와주는 어댑터 */
+    private ViewPager viewPager;
+    private ItemViewPagerAdapter itemViewPagerAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,16 +48,26 @@ public class ItemActivity extends AppCompatActivity implements
 
           /* Item의 상단탭
          하단탭에서 Item의 상단탭을 선택했을 시에만 보여져야 함
-         상단탭이 선택되었을 때, 상단탭의 선택된 현재 위치를 얻어 Fragment를 이동시킨다.
          */
         item_tabLayout=(TabLayout)findViewById(R.id.item_tab_layout);
+
+        /* 뷰페이져 어댑터 객체를 생성하고,
+         * 생성자를 통해서 프래그먼트 관리를 도와주는 FragmentManager와
+         * 페이지의 개수를 탭의 개수와 맞춰주기 위해 Page Count를 받아온다.
+         * 뷰페이저에 어댑터를 설정한다.
+         * 그 후, tabLayout과 viewPager 연결
+         */
+        viewPager=(ViewPager)findViewById(R.id.item_fragment_container);
+        itemViewPagerAdapter=new ItemViewPagerAdapter(getSupportFragmentManager(),item_tabLayout.getTabCount());
+        viewPager.setAdapter(itemViewPagerAdapter);
+
+        /*
+         상단탭이 선택되었을 때, 상단탭의 선택된 현재 위치를 얻어 Fragment를 이동시킨다.
+         */
         item_tabLayout.addOnTabSelectedListener(new ItemTopItemSelectedListener());
 
-        /* 첫 화면이 ItemHomeFragment이므로, Transaction을 getSupportFragmentManager().beginTransaction()을 통해 가져온 후,
-         * acitivity_item.xml에 있는 framelayout인 item_fragment_container의 화면을 shopFragment로 변경해준 후,
-         * commit 호출해주어야 Transaction 작업이 완료됨.
-         */
-        getSupportFragmentManager().beginTransaction().replace(R.id.item_fragment_container, itemHomeFragment).commit();
+        /* ViewPager의 페이지가 변경될 때 알려주는 리스너*/
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(item_tabLayout));
     }
 
     /*
@@ -66,38 +81,18 @@ public class ItemActivity extends AppCompatActivity implements
     class ItemTopItemSelectedListener implements TabLayout.OnTabSelectedListener{
         @Override
         public void onTabSelected(TabLayout.Tab tab) {
-            FragmentTransaction transaction=fragmentManager.beginTransaction(); // FragmentTransaction 가져오기
-            int position=tab.getPosition(); // 상단탭의 선택된 현재 위치 받아오기
-            switch(position){
-                case 0:
-                    transaction.replace(R.id.item_fragment_container, itemHomeFragment).commit();
-                    break;
-                case 1:
-                    transaction.replace(R.id.item_fragment_container, itemNewFragment).commit();
-                    break;
-                case 2:
-                    transaction.replace(R.id.item_fragment_container, itemBestFragment).commit();
-                    break;
-                case 3:
-                    transaction.replace(R.id.item_fragment_container, itemAiFragment).commit();
-                    break;
-                case 4:
-                    transaction.replace(R.id.item_fragment_container, itemSaleFragment).commit();
-                    break;
-            }
-
+         viewPager.setCurrentItem(tab.getPosition());
         }
 
         @Override
         public void onTabUnselected(TabLayout.Tab tab) {
-
         }
 
         @Override
         public void onTabReselected(TabLayout.Tab tab) {
-
         }
     }
+
 
     /*
      * Item 버튼을  눌렀을 때, Item Activity 이동
