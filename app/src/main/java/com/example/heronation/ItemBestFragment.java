@@ -1,96 +1,63 @@
 package com.example.heronation;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+
+import java.util.ArrayList;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link ItemBestFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link ItemBestFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class ItemBestFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private RecyclerView category_recyclerView;
+    private ItemBestCategoryAdapter itemBestCategoryAdapter;
+    private ArrayList<ItemBestCategory> list=new ArrayList<>();
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    private OnFragmentInteractionListener mListener;
-
-    public ItemBestFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ItemBestFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ItemBestFragment newInstance(String param1, String param2) {
-        ItemBestFragment fragment = new ItemBestFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        /* 카테고리 리스트에 아이템 추가
+        *  여기서 카테고리 이름이나, 이미지 변경하면 됨
+        */
+        addItem(getResources().getDrawable(R.drawable.ic_item_all),"전체");
+        addItem(getResources().getDrawable(R.drawable.ic_all_tshirts),"상의");
+        addItem(getResources().getDrawable(R.drawable.ic_all_pants),"하의");
+        addItem(getResources().getDrawable(R.drawable.ic_all_outer),"아우터");
+        addItem(getResources().getDrawable(R.drawable.ic_all_onepiece),"원피스");
+        addItem(getResources().getDrawable(R.drawable.ic_all_skirt),"스커트");
+        addItem(getResources().getDrawable(R.drawable.ic_all_shoes),"슈즈");
+        addItem(getResources().getDrawable(R.drawable.ic_all_bag),"가방");
+        addItem(getResources().getDrawable(R.drawable.ic_all_acc),"액세서리");
+        addItem(getResources().getDrawable(R.drawable.ic_all_socks),"패션소품");
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_item_best, container, false);
+        ViewGroup rootView=(ViewGroup)inflater.inflate(R.layout.fragment_item_best,container,false);
+        category_recyclerView=(RecyclerView)rootView.findViewById(R.id.item_best_item_category);
+
+        /* 리사이클러뷰 객체 생성 */
+        itemBestCategoryAdapter=new ItemBestCategoryAdapter(getActivity(),list);
+        /* 레이아웃 매니저 수평으로 지정 */
+        category_recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,false));
+       /* 리사이클러뷰에 어댑터 지정 */
+        category_recyclerView.setAdapter(itemBestCategoryAdapter);
+        // Inflate the layout for this fragment
+        return rootView;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
+    public void addItem(Drawable icon,String name){
+        ItemBestCategory item=new ItemBestCategory(icon,name);
+        list.add(item);
     }
 
     /**
