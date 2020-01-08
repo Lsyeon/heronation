@@ -30,7 +30,8 @@
             android:id="@+id/recycler_view_item_best_item_name"
             android:layout_width="match_parent"
             android:layout_height="16dp"
-            android:textSize="12sp"
+            android:textSize="10sp"
+            android:textStyle="bold"
             tools:text="데이 반목니트" />
 
         <TextView

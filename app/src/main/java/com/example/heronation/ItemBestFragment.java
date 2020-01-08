@@ -66,15 +66,15 @@ public class ItemBestFragment extends Fragment {
         /* 아이템(상품) 추가 */
         ArrayList<ShopItem> shopItem1=new ArrayList<>();
         shopItem1.add(new ShopItem("https://www.ggsing.com/web/product/medium/20191122/31de60c9a2096b6bf648d111684eacb7.gif",
-                "앙고라머플러반코트", "고고싱", 53000, 50000));
+                "앙고라 머플러 반코트", "고고싱", 53000, 50000));
         shopItem1.add(new ShopItem("https://www.ggsing.com/web/product/medium/20191128/87b5a0ae6e03d0977e58b787bab5d1ac.gif",
-                "떡볶이코트", "고고싱", 53000, 45000));
+                "떡볶이 코트", "고고싱", 53000, 45000));
         shopItem1.add(new ShopItem("https://www.ggsing.com/web/product/medium/201910/ec8129532e1a12ff2728d6c45ba51d39.gif",
-                "핸드메이드코트", "고고싱", 63000, 60000));
+                "핸드메이드 코트", "고고싱", 63000, 60000));
         shopItem1.add(new ShopItem("https://www.ggsing.com/web/product/medium/201911/1d060a6ef06b95fcff02f2237d661f82.gif",
-                "앙고라머플러반코트", "고고싱", 53000, 50000));
+                "앙고라 머플러 반코트", "고고싱", 53000, 50000));
         shopItem1.add(new ShopItem("https://www.ggsing.com/web/product/medium/201910/ec8129532e1a12ff2728d6c45ba51d39.gif",
-                "앙고라머플러반코트", "고고싱", 53000, 50000));
+                "앙고라 머플러 반코트", "고고싱", 53000, 50000));
         item_list.add(shopItem1);
 
         ArrayList<ShopItem> shopItem2=new ArrayList<>();
