@@ -40,7 +40,6 @@ public class ItemBestCategoryAdapter extends RecyclerView.Adapter<ItemBestCatego
         int item_position=position;
         holder.image_icon.setImageDrawable(category_list.get(item_position).getIcon_drawable());
         holder.category_name.setText(category_list.get(item_position).getItem_name());
-
     }
 
     /* 전체 아이템 개수를 return */
@@ -49,6 +48,7 @@ public class ItemBestCategoryAdapter extends RecyclerView.Adapter<ItemBestCatego
         return category_list.size();
     }
 
+    /* 뷰홀더 데이터가 놓일 공간을 마련해준다. */
     public class Holder extends RecyclerView.ViewHolder{
         public TextView category_name;
         public ImageView image_icon;
