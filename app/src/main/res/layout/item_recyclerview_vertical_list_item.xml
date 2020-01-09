@@ -11,11 +11,11 @@
         android:id="@+id/packed_item_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:text="All Best"
-        android:textStyle="bold"
-        tools:text="All Best"/>
+        android:textSize="12sp"
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewVertical"

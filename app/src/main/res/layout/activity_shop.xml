@@ -5,6 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ShopActivity">
+    <!--drawerlayout 안에 상단바랑 frameLayout이 있음-->
+    <androidx.drawerlayout.widget.DrawerLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <!--상단바-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#A0A0A0">
+        <!--상단바 좌측에 있는 이미지 버튼-->
+
+        <ImageButton
+            android:contentDescription="@string/app_name"
+            android:id="@+id/btn_open"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:background="@drawable/appbar_icon"
+            android:layout_marginLeft="15dp" />
+    </RelativeLayout>
+
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -97,4 +127,9 @@
     </LinearLayout>
 
 </RelativeLayout>
+
+    </LinearLayout>
+        <include layout="@layout/drawer" /> <!-- 액티비티 드로워 레이아웃을 메인과 연결시킨거-->
+    </androidx.drawerlayout.widget.DrawerLayout>
+    <!-- 여기까지 드로워 -->
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

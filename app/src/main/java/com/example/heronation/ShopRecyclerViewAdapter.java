@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -66,6 +67,7 @@ public class ShopRecyclerViewAdapter extends RecyclerView.Adapter<ShopRecyclerVi
         public ImageView shop_img1;
         public ImageView shop_img2;
         public ImageView shop_img3;
+        public ImageButton favorite_button;
 
         public Holder(View view){
             super(view);
@@ -75,6 +77,8 @@ public class ShopRecyclerViewAdapter extends RecyclerView.Adapter<ShopRecyclerVi
             shop_img1=(ImageView)view.findViewById(R.id.shop_ranking_shop_img1);
             shop_img2=(ImageView)view.findViewById(R.id.shop_ranking_shop_img2);
             shop_img3=(ImageView)view.findViewById(R.id.shop_ranking_shop_img3);
+            favorite_button=(ImageButton)view.findViewById(R.id.favorite_button);
+
         }
     }
 }

@@ -5,6 +5,9 @@
     android:layout_height="match_parent"
     android:background="#f3f3f3"
     tools:context=".ShopRankingFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +17,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="6"
+            android:layout_weight="4"
             android:scaleType="centerCrop"
             android:src="@drawable/banner_example" />
 
@@ -32,7 +35,8 @@
                 android:layout_height="16dp"
                 android:scaleType="centerInside"
                 android:layout_marginLeft="8dp"
-                android:layout_alignParentLeft="true" />
+                android:layout_alignParentLeft="true"
+                android:onClick="click_filter"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -64,5 +68,8 @@
             android:layout_height="0dp"
             android:layout_weight="14" />
     </LinearLayout>
+
+     
+    </RelativeLayout>
 
 </FrameLayout>
