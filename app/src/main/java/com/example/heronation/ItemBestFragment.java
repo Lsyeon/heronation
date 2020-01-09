@@ -23,7 +23,7 @@ public class ItemBestFragment extends Fragment {
     private ItemBestCategoryAdapter itemBestCategoryAdapter;
     private ItemVerticalAdapter verticalAdapter;
     private ArrayList<ItemBestCategory> list=new ArrayList<>();
-    private ArrayList<ArrayList<ShopItem>> item_list=new ArrayList<>();
+    private ArrayList<ShopItemPackage> item_list=new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -75,7 +75,8 @@ public class ItemBestFragment extends Fragment {
                 "앙고라 머플러 반코트", "고고싱", 53000, 50000));
         shopItem1.add(new ShopItem("https://www.ggsing.com/web/product/medium/201910/ec8129532e1a12ff2728d6c45ba51d39.gif",
                 "앙고라 머플러 반코트", "고고싱", 53000, 50000));
-        item_list.add(shopItem1);
+        // 상품들 묶음 추가
+        item_list.add(new ShopItemPackage("All best",shopItem1));
 
         ArrayList<ShopItem> shopItem2=new ArrayList<>();
         shopItem2.add(new ShopItem("https://www.ggsing.com/web/product/medium/20191122/31de60c9a2096b6bf648d111684eacb7.gif",
@@ -88,7 +89,8 @@ public class ItemBestFragment extends Fragment {
                 "앙고라머플러반코트", "고고싱", 53000, 50000));
         shopItem2.add(new ShopItem("https://www.ggsing.com/web/product/medium/201910/ec8129532e1a12ff2728d6c45ba51d39.gif",
                 "앙고라머플러반코트", "고고싱", 53000, 50000));
-        item_list.add(shopItem2);
+        // 상품들 묶음 추가
+        item_list.add(new ShopItemPackage("상의 best",shopItem2));
 
         ArrayList<ShopItem> shopItem3=new ArrayList<>();
         shopItem3.add(new ShopItem("https://www.ggsing.com/web/product/medium/20191122/31de60c9a2096b6bf648d111684eacb7.gif",
@@ -101,7 +103,8 @@ public class ItemBestFragment extends Fragment {
                 "앙고라머플러반코트", "고고싱", 53000, 50000));
         shopItem3.add(new ShopItem("https://www.ggsing.com/web/product/medium/201910/ec8129532e1a12ff2728d6c45ba51d39.gif",
                 "앙고라머플러반코트", "고고싱", 53000, 50000));
-        item_list.add(shopItem3);
+        // 상품들 묶음 추가
+        item_list.add(new ShopItemPackage("하의 best",shopItem3));
     }
 
 

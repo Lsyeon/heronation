@@ -27,13 +27,11 @@
                 android:id="@+id/shop_ranking_filter"
                 android:src="@drawable/item_home_filter_icon"
                 android:background="#f3f3f3"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="4dp"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginRight="8dp"
+                android:layout_centerInParent="true"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
                 android:scaleType="centerInside"
+                android:layout_marginLeft="8dp"
                 android:layout_alignParentLeft="true" />
 
             <TextView
@@ -41,6 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/shop_ranking_filter"
+                android:layout_marginLeft="8dp"
                 android:text="20대 초반"
                 android:textSize="10sp" />
 
@@ -60,12 +59,10 @@
         </RelativeLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view_shop_ranking_recyclerview"
+            android:id="@+id/recycler_view_shop_ranking"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="14" />
-
-
     </LinearLayout>
 
 </FrameLayout>

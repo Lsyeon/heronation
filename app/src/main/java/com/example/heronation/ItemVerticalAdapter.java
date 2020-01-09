@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,10 +13,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class ItemVerticalAdapter extends RecyclerView.Adapter<ItemVerticalAdapter.VerticalViewHolder> {
-    private ArrayList<ArrayList<ShopItem>> itemList_List;
+    private ArrayList<ShopItemPackage> itemList_List;
     private Context context;
 
-    public ItemVerticalAdapter(ArrayList<ArrayList<ShopItem>> itemList_List, Context context) {
+    public ItemVerticalAdapter(ArrayList<ShopItemPackage> itemList_List, Context context) {
         this.itemList_List = itemList_List;
         this.context = context;
     }
@@ -35,7 +36,7 @@ public class ItemVerticalAdapter extends RecyclerView.Adapter<ItemVerticalAdapte
     @Override
     public void onBindViewHolder(@NonNull ItemVerticalAdapter.VerticalViewHolder holder, int position) {
         //수평 리사이클러뷰 어댑터
-        ItemHorizontalAdapter adapter=new ItemHorizontalAdapter(itemList_List.get(position),context);
+        ItemHorizontalAdapter adapter=new ItemHorizontalAdapter(itemList_List.get(position).getShopItems(),context);
         /* 수직 리사이클러뷰의 하나의 아이템에 수평 리사이클러뷰의 아이템을 수평 방향으로 배치 설정, 어댑터 지정
         * (ex)  수평 리사이클러뷰
         *       수평 리사이클러뷰
@@ -47,6 +48,7 @@ public class ItemVerticalAdapter extends RecyclerView.Adapter<ItemVerticalAdapte
         holder.recyclerView.setHasFixedSize(true);
         holder.recyclerView.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false));
         holder.recyclerView.setAdapter(adapter);
+        holder.packageName.setText(itemList_List.get(position).getPackageName());
 
     }
 
@@ -57,11 +59,13 @@ public class ItemVerticalAdapter extends RecyclerView.Adapter<ItemVerticalAdapte
 
     public class VerticalViewHolder extends RecyclerView.ViewHolder{
         protected RecyclerView recyclerView;
+        protected TextView packageName;
 
         public VerticalViewHolder(View view)
         {
             super(view);
             this.recyclerView = (RecyclerView)view.findViewById(R.id.recyclerViewVertical);
+            this.packageName=(TextView)view.findViewById(R.id.packed_item_name);
         }
     }
 }

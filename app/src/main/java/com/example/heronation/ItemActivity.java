@@ -9,8 +9,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -115,6 +117,24 @@ public class ItemActivity extends AppCompatActivity implements
     public void Click_mypageButton(View view){
         Intent intent=new Intent(this,MypageActivity.class);
         startActivity(intent);
+    }
+
+    /* 수정필요 */
+    public void button_listener(){
+        final ImageButton item_button=(ImageButton)findViewById(R.id.item_bottom_menu);
+        item_button.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                switch (motionEvent.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        item_button.setBackgroundResource(R.drawable.item_svg2);
+                    case MotionEvent.ACTION_UP:
+                        item_button.setBackgroundResource(R.drawable.item_svg);
+                }
+                return false;
+            }
+        });
+
     }
 
     /*

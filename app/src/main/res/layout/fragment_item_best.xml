@@ -19,10 +19,9 @@
             android:scaleType="centerCrop"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
             android:id="@+id/item_best_item_category"
             android:layout_width="match_parent"
             android:layout_height="0dp"
