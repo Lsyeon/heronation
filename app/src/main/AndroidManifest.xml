@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".loginPageActivity"></activity>
+        <activity android:name=".myPageConnectingActivity"></activity>
+        <activity android:name=".loginPageActivity" />
         <activity android:name=".FilterPopUpActivity" />
         <activity android:name=".MeasurementActivity" />
         <activity android:name=".WishlistActivity" />

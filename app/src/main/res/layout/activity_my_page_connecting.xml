@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f3f3f3"
-    tools:context=".MypageActivity">
+    tools:context=".myPageConnectingActivity">
     <!--drawerlayout 안에 상단바랑 frameLayout이 있음-->
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawer_layout"
@@ -44,65 +44,60 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="40dp"
-                    android:layout_marginRight="15dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="15dp"
-                        android:text="Woman"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
-
-                    <Switch
-                        android:id="@+id/gender_switch"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checked="true"
-                        android:switchMinWidth="50dp"
-                        android:textOff="OFF"
-                        android:textOn="ON"
-                        android:textSize="24sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:text="Man"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="20dp"
                     android:orientation="vertical">
 
-                    <Button
-                        android:id="@+id/mypage_login_btn"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
-                        android:layout_below="@+id/button"
+                        android:layout_gravity="center|center_horizontal"
+                        android:background="@drawable/button_background"
+                        android:gravity="center"
+                        android:text="안녕하세요 \n xxxx님"
+                        android:textSize="22sp" />
+
+                    <Button
+                        android:id="@+id/mypage_userModify_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/button_background"
-                        android:text="로그인" />
+                        android:text="회원정보 수정" />
 
-                    <Button
-                        android:id="@+id/mypage_joinMembership_btn"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_marginTop="15dp"
-                        android:background="@drawable/button_background"
-                        android:text="회원가입" />
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="210dp"
+                        android:orientation="vertical">
 
+                        <Button
+                            android:id="@+id/mypage_userTermsOfUse_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/button_background"
+                            android:text="개인정보 수정 및 이용약관" />
+
+                        <Button
+                            android:id="@+id/mypage_serviceTermsOfUse_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:background="@drawable/button_background"
+                            android:text="서비스 이용약관" />
+
+                        <Button
+                            android:id="@+id/mypage_inquiry_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:background="@drawable/button_background"
+                            android:text="1:1 문의하기 -> 카톡" />
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 

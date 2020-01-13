@@ -49,7 +49,7 @@ public class ItemActivity extends AppCompatActivity implements
     private View drawerView;
 
     /* 로그인 상태 boolean값 */
-    boolean loginState = true;
+    public boolean loginState = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,12 +91,12 @@ public class ItemActivity extends AppCompatActivity implements
             /* 클릭했을때 Drawer open, 로그인 상태에 따라 닉네임 or 로그인/회원가입 */
             @Override   //클릭했을때 Drawer open
             public void onClick(View v) {
-                    if(loginState == true){
-                        id_text.setText("닉네임");
-                    }
-                    else{
-                        id_text.setText("로그인/회원가입");
-                    }
+                if(loginState == true){
+                    id_text.setText("닉네임");
+                }
+                else{
+                    id_text.setText("로그인/회원가입");
+                }
                 drawerLayout.openDrawer(drawerView);
             }
         });
@@ -128,7 +128,7 @@ public class ItemActivity extends AppCompatActivity implements
     class ItemTopItemSelectedListener implements TabLayout.OnTabSelectedListener{
         @Override
         public void onTabSelected(TabLayout.Tab tab) {
-         viewPager.setCurrentItem(tab.getPosition());
+            viewPager.setCurrentItem(tab.getPosition());
         }
 
         @Override
@@ -148,7 +148,7 @@ public class ItemActivity extends AppCompatActivity implements
 
     public void Click_textId(View view){
         if(loginState == true){
-            Intent intent = new Intent(this, MypageActivity.class);
+            Intent intent = new Intent(this, myPageConnectingActivity.class);
             startActivity(intent);
         }
         else{
@@ -170,8 +170,14 @@ public class ItemActivity extends AppCompatActivity implements
         startActivity(intent);
     }
     public void Click_mypageButton(View view){
-        Intent intent=new Intent(this,MypageActivity.class);
-        startActivity(intent);
+        if(loginState == true){
+            Intent intent = new Intent(this, myPageConnectingActivity.class);
+            startActivity(intent);
+        }
+        else {
+            Intent intent = new Intent(this, MypageActivity.class);
+            startActivity(intent);
+        }
     }
 
 
