@@ -5,16 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.slidingpanelayout.widget.SlidingPaneLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.PopupWindow;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -38,6 +42,8 @@ public class ShopActivity extends AppCompatActivity implements
     /* 상단 메뉴 버튼을 눌렀을 때 뜨는 레이아웃을 위한 변수들 */
     private DrawerLayout drawerLayout;
     private View drawerView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,6 +101,8 @@ public class ShopActivity extends AppCompatActivity implements
             }
         });
         /* 상단바 메뉴 드로워 */
+
+
 
     }
     /*
@@ -162,6 +170,30 @@ public class ShopActivity extends AppCompatActivity implements
         public void onDrawerStateChanged(int newState) {
         }
     };
+
+
+    void open_panel(){
+
+        PopupWindow mPopupWindow;
+        View popupView = getLayoutInflater().inflate(R.layout.activity_filter_pop_up, null);
+        mPopupWindow = new PopupWindow(popupView);
+        mPopupWindow.setWindowLayoutMode(WindowManager.LayoutParams.MATCH_PARENT,
+                WindowManager.LayoutParams.WRAP_CONTENT);
+        //팝업 터치 가능
+        mPopupWindow.setTouchable(true);
+        //팝업 외부 터치 가능(외부 터치시 나갈 수 있게)
+        mPopupWindow.setOutsideTouchable(true);
+        //외부터치 인식을 위한 추가 설정 : 미 설정시 외부는 null로 생각하고 터치 인식 X
+        mPopupWindow.setBackgroundDrawable(new BitmapDrawable());
+        //애니메이션 활성화
+        mPopupWindow.setAnimationStyle(R.style.Animation_AppCompat_DropDownUp);
+
+
+        mPopupWindow.showAtLocation(popupView, Gravity.BOTTOM, 0, 0);
+
+
+
+    }
 
     /*
      * onFragmenInteraciton~ 를 한 이유
