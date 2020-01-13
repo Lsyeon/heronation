@@ -2,11 +2,18 @@ package com.example.heronation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 
 public class FilterPopUpActivity extends AppCompatActivity {
+
+    private Button filter_male;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,5 +22,6 @@ public class FilterPopUpActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_filter_pop_up);
+
     }
 }

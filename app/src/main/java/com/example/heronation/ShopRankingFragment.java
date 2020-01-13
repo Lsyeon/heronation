@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ public class ShopRankingFragment extends Fragment {
     private RecyclerView shop_recyclerView;
     private ArrayList<Shop> shop_list=new ArrayList<>();
     private ImageButton filter_button;
-    private ImageButton favorite_button;
+    private Button search_button;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,12 +42,25 @@ public class ShopRankingFragment extends Fragment {
         /* 리사이클러뷰에 어댑터 지정 */
         shop_recyclerView.setAdapter(shopRecyclerViewAdapter);
 
-        /* 필터 버튼 */
+        /* 필터 버튼
+        *  필터 버튼을 눌렀을 때, 팝업창을 띄어줌
+        */
         filter_button=(ImageButton)rootView.findViewById(R.id.shop_ranking_filter);
         filter_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                     ((ShopActivity)getActivity()).open_panel();
+            }
+        });
+
+        /* 검색 버튼
+        *  검색 버튼을 눌렀을 때 Shop 검색 Activity로 이동*/
+        search_button=(Button)rootView.findViewById(R.id.shop_ranking_search);
+        search_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getActivity(),ShopRankingSearchActivity.class);
+                startActivity(intent);
             }
         });
 

@@ -7,7 +7,7 @@
     tools:context=".FilterPopUpActivity">
 
     <LinearLayout
-        android:paddingTop="16dp"
+        android:padding="32dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
@@ -27,6 +27,7 @@
                 android:textSize="14sp" />
 
             <Button
+                android:id="@+id/shop_filter_gender_male"
                 android:layout_marginLeft="64dp"
                 android:layout_width="wrap_content"
                 android:layout_height="24dp"
@@ -35,6 +36,7 @@
                 android:textSize="10sp" />
 
             <Button
+                android:id="@+id/shop_filter_gender_female"
                 android:layout_marginLeft="24dp"
                 android:layout_width="wrap_content"
                 android:layout_height="24dp"
@@ -108,6 +110,7 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/shop_filter_category_cloth"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="24dp"
@@ -116,6 +119,7 @@
                     android:textSize="10sp" />
 
                 <Button
+                    android:id="@+id/shop_filter_category_acc"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="24dp"
@@ -126,6 +130,7 @@
 
 
                 <Button
+                    android:id="@+id/shop_filter_category_bag"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="24dp"
@@ -136,6 +141,7 @@
 
 
                 <Button
+                    android:id="@+id/shop_filter_category_shoes"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="24dp"
@@ -175,6 +181,7 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/shop_filter_style_feminine"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="24dp"
@@ -183,6 +190,7 @@
                     android:textSize="10sp" />
 
                 <Button
+                    android:id="@+id/shop_filter_style_modern"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="24dp"
@@ -193,6 +201,7 @@
 
 
                 <Button
+                    android:id="@+id/shop_filter_style_simple"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="24dp"
@@ -203,6 +212,7 @@
 
 
                 <Button
+                    android:id="@+id/shop_filter_style_lovely"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="24dp"
@@ -220,6 +230,7 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/shop_filter_style_unique"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="24dp"
@@ -228,6 +239,7 @@
                     android:textSize="10sp" />
 
                 <Button
+                    android:id="@+id/shop_filter_style_missy"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="24dp"
@@ -238,6 +250,7 @@
 
 
                 <Button
+                    android:id="@+id/shop_filter_style_campus"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="24dp"
@@ -248,6 +261,7 @@
 
 
                 <Button
+                    android:id="@+id/shop_filter_style_vintage"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="24dp"
@@ -265,6 +279,7 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/shop_filter_style_sexy"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="24dp"
@@ -273,6 +288,7 @@
                     android:textSize="10sp" />
 
                 <Button
+                    android:id="@+id/shop_filter_style_school"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="24dp"
@@ -283,6 +299,7 @@
 
 
                 <Button
+                    android:id="@+id/shop_filter_style_romantic"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="24dp"
@@ -293,6 +310,7 @@
 
 
                 <Button
+                    android:id="@+id/shop_filter_style_office"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="24dp"
@@ -317,9 +335,10 @@
             android:layout_marginTop="8dp">
 
         <Button
+            android:id="@+id/shop_filter_return"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="30dp"
+            android:layout_height="32dp"
             android:background="@drawable/round_rectange_color"
             android:layout_marginRight="4dp"
             android:text="초기화"
@@ -327,10 +346,11 @@
             android:textColor="#ffffff"/>
 
             <Button
+                android:id="@+id/shop_filter_finish"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_marginLeft="4dp"
-                android:layout_height="30dp"
+                android:layout_height="32dp"
                 android:background="@drawable/round_rectange_color"
                 android:text="선택완료"
                 android:textSize="12sp"
