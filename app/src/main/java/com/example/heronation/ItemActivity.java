@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -46,6 +47,9 @@ public class ItemActivity extends AppCompatActivity implements
     /* 상단 메뉴 버튼을 눌렀을 때 뜨는 레이아웃을 위한 변수들 */
     private DrawerLayout drawerLayout;
     private View drawerView;
+
+    /* 로그인 상태 boolean값 */
+    boolean loginState = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,10 +86,17 @@ public class ItemActivity extends AppCompatActivity implements
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerView = (View) findViewById(R.id.drawer);
         ImageButton btn_open = (ImageButton) findViewById(R.id.btn_open);   //openimage 정의
+        final TextView id_text = (TextView)findViewById(R.id.text_id);
         btn_open.setOnClickListener(new View.OnClickListener() {
-
+            /* 클릭했을때 Drawer open, 로그인 상태에 따라 닉네임 or 로그인/회원가입 */
             @Override   //클릭했을때 Drawer open
             public void onClick(View v) {
+                    if(loginState == true){
+                        id_text.setText("닉네임");
+                    }
+                    else{
+                        id_text.setText("로그인/회원가입");
+                    }
                 drawerLayout.openDrawer(drawerView);
             }
         });
@@ -128,14 +139,24 @@ public class ItemActivity extends AppCompatActivity implements
         public void onTabReselected(TabLayout.Tab tab) {
         }
     }
-
-
-    /*
+    /* Drawer bar의 닉네임 or 회원가입/로그인을 눌렀을때 mypageActivity 혹은 loginAtivity 이동
      * Item 버튼을  눌렀을 때, Item Activity 이동
      * Shop 버튼을 눌렀을 때, Shop Activity 이동
      * 측정 버튼을 눌렀을 때, Measurement Activity 이동
      * 찜 버튼을 눌렀을 때, Wishlist Activity 이동
      * 마이 페이지 버튼을 눌렀을 때, Mypage Activity 이동*/
+
+    public void Click_textId(View view){
+        if(loginState == true){
+            Intent intent = new Intent(this, MypageActivity.class);
+            startActivity(intent);
+        }
+        else{
+            Intent intent = new Intent(this, loginPageActivity.class);
+            startActivity(intent);
+        }
+    }
+
     public void Click_shopButton(View view){
         Intent intent=new Intent(this,ShopActivity.class);
         startActivity(intent);
