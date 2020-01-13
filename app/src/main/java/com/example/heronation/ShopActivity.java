@@ -52,8 +52,8 @@ public class ShopActivity extends AppCompatActivity implements
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_shop);
 
+
            /* Shop의 상단탭
-         하단탭에서 Shop의 상단탭을 선택했을 시에만 보여져야 함
         */
         shop_tabLayout=(TabLayout)findViewById(R.id.shop_tab_layout);
 
@@ -174,6 +174,7 @@ public class ShopActivity extends AppCompatActivity implements
 
     void open_panel(){
 
+        /* 필터 PopUp창 띄우기 */
         PopupWindow mPopupWindow;
         View popupView = getLayoutInflater().inflate(R.layout.activity_filter_pop_up, null);
         mPopupWindow = new PopupWindow(popupView);
@@ -187,12 +188,8 @@ public class ShopActivity extends AppCompatActivity implements
         mPopupWindow.setBackgroundDrawable(new BitmapDrawable());
         //애니메이션 활성화
         mPopupWindow.setAnimationStyle(R.style.Animation_AppCompat_DropDownUp);
-
-
+        // PopUp 창 띄우기
         mPopupWindow.showAtLocation(popupView, Gravity.BOTTOM, 0, 0);
-
-
-
     }
 
     /*

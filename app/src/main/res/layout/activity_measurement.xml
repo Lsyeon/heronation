@@ -71,7 +71,7 @@
             android:scaleType="centerInside"
             android:background="#ffffff"
             android:padding="16dp"
-            android:src="@drawable/measurement_svg"/>
+            android:src="@drawable/measurement_svg2"/>
 
         <ImageButton
             android:id="@+id/wishlist_bottom_menu"

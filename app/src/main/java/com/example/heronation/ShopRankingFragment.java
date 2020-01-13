@@ -21,6 +21,7 @@ public class ShopRankingFragment extends Fragment {
     private RecyclerView shop_recyclerView;
     private ArrayList<Shop> shop_list=new ArrayList<>();
     private ImageButton filter_button;
+    private ImageButton favorite_button;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,7 +49,6 @@ public class ShopRankingFragment extends Fragment {
                     ((ShopActivity)getActivity()).open_panel();
             }
         });
-
 
         return rootView;
     }

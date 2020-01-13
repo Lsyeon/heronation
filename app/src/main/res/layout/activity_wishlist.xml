@@ -137,7 +137,7 @@
             android:layout_height="match_parent"
             android:scaleType="centerInside"
             android:background="#ffffff"
-            android:src="@drawable/wishlist_svg"/>
+            android:src="@drawable/wishlist_svg2"/>
 
         <ImageButton
             android:id="@+id/mypage_bottom_menu"

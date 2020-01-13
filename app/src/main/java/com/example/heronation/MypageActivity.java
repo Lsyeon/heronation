@@ -17,6 +17,7 @@ public class MypageActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private View drawerView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +25,8 @@ public class MypageActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_mypage);
+
+
 
         /* 상단바 메뉴 드로워 */
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -87,6 +90,7 @@ public class MypageActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void Click_measurementButton(View view){
+
         Intent intent=new Intent(this,MeasurementActivity.class);
         startActivity(intent);
     }

@@ -51,6 +51,7 @@ public class ItemActivity extends AppCompatActivity implements
     /* 로그인 상태 boolean값 */
     boolean loginState = true;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,9 +60,8 @@ public class ItemActivity extends AppCompatActivity implements
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_item);
 
-          /* Item의 상단탭
-         하단탭에서 Item의 상단탭을 선택했을 시에만 보여져야 함
-         */
+
+          /* Item의 상단탭*/
         item_tabLayout=(TabLayout)findViewById(R.id.item_tab_layout);
 
         /* 뷰페이져 어댑터 객체를 생성하고,

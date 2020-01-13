@@ -92,8 +92,7 @@
             android:layout_height="match_parent"
             android:scaleType="centerInside"
             android:background="#ffffff"
-
-            android:src="@drawable/shop_svg"/>
+            android:src="@drawable/shop_svg2"/>
 
         <ImageButton
             android:id="@+id/measurement_bottom_menu"

@@ -92,7 +92,7 @@
             android:layout_height="match_parent"
             android:scaleType="centerInside"
             android:background="#ffffff"
-            android:src="@drawable/mypage_svg"/>
+            android:src="@drawable/mypage_svg2"/>
     </LinearLayout>
         </RelativeLayout>
         <include layout="@layout/drawer" /> <!-- 액티비티 드로워 레이아웃을 메인과 연결시킨거-->

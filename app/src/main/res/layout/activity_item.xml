@@ -99,7 +99,7 @@
                     android:scaleType="fitCenter"
                     android:background="#ffffff"
                     android:padding="16dp"
-                    android:src="@drawable/item_svg"/>
+                    android:src="@drawable/item_svg2"/>
 
                 <ImageButton
                     android:id="@+id/shop_bottom_menu"
