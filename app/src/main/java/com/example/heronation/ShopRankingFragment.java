@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 public class ShopRankingFragment extends Fragment {
     private RecyclerView shop_recyclerView;
     private ArrayList<Shop> shop_list=new ArrayList<>();
+    private ImageButton filter_button;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,12 +32,23 @@ public class ShopRankingFragment extends Fragment {
         ViewGroup rootView=(ViewGroup)inflater.inflate(R.layout.fragment_shop_ranking, container,false);
         shop_recyclerView=(RecyclerView)rootView.findViewById(R.id.recycler_view_shop_ranking);
 
+
         /* 리사이클러뷰 객체 생성 */
         ShopRecyclerViewAdapter shopRecyclerViewAdapter=new ShopRecyclerViewAdapter(getActivity(),shop_list);
         /* 레이아웃 매니저 수평으로 지정 */
         shop_recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false));
         /* 리사이클러뷰에 어댑터 지정 */
         shop_recyclerView.setAdapter(shopRecyclerViewAdapter);
+
+        /* 필터 버튼 */
+        filter_button=(ImageButton)rootView.findViewById(R.id.shop_ranking_filter);
+        filter_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    ((ShopActivity)getActivity()).open_panel();
+            }
+        });
+
 
         return rootView;
     }
@@ -70,14 +83,6 @@ public class ShopRankingFragment extends Fragment {
 
 
     }
-
-    public void click_filter(View view){
-        Intent intent=new Intent(getContext(),FilterPopUpActivity.class);
-        startActivityForResult(intent,1);
-
-    }
-
-
 
     /**
      * This interface must be implemented by activities that contain this

@@ -36,7 +36,7 @@
                 android:scaleType="centerInside"
                 android:layout_marginLeft="8dp"
                 android:layout_alignParentLeft="true"
-                android:onClick="click_filter"/>
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -49,15 +49,16 @@
 
             <Button
                 android:layout_width="60dp"
-                android:layout_height="match_parent"
+                android:layout_height="40dp"
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="8dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="4dp"
                 android:background="@drawable/round_rectangle"
                 android:text="검색"
                 android:textColor="#666666"
+                android:textAlignment="center"
                 android:textSize="10sp" />
 
         </RelativeLayout>
