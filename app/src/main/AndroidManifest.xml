@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.heronation">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ShopRankingSearchActivity"></activity>
+        <activity android:name=".loginPageActivity" />
+        <activity android:name=".myPageConnectingActivity"></activity>
         <activity android:name=".loginPageActivity" />
         <activity android:name=".FilterPopUpActivity" />
         <activity android:name=".MeasurementActivity" />
@@ -24,7 +28,5 @@
             </intent-filter>
         </activity>
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

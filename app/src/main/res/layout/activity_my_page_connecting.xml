@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f3f3f3"
+    tools:context=".myPageConnectingActivity">
+    <!--drawerlayout 안에 상단바랑 frameLayout이 있음-->
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--상단바-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#A0A0A0">
+                <!--상단바 좌측에 있는 이미지 버튼-->
+
+                <ImageButton
+                    android:id="@+id/btn_open"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/appbar_icon"
+                    android:contentDescription="@string/app_name" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="56dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center|center_horizontal"
+                        android:background="@drawable/button_background"
+                        android:gravity="center"
+                        android:text="안녕하세요 \n xxxx님"
+                        android:textSize="22sp" />
+
+                    <Button
+                        android:id="@+id/mypage_userModify_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/button_background"
+                        android:text="회원정보 수정" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="210dp"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/mypage_userTermsOfUse_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/button_background"
+                            android:text="개인정보 수정 및 이용약관" />
+
+                        <Button
+                            android:id="@+id/mypage_serviceTermsOfUse_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:background="@drawable/button_background"
+                            android:text="서비스 이용약관" />
+
+                        <Button
+                            android:id="@+id/mypage_inquiry_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:background="@drawable/button_background"
+                            android:text="1:1 문의하기 -> 카톡" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/item_bottom_menu"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:onClick="Click_itemButton"
+                    android:padding="16dp"
+
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/item_svg" />
+
+                <ImageButton
+                    android:id="@+id/shop_bottom_menu"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:onClick="Click_shopButton"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/shop_svg" />
+
+                <ImageButton
+                    android:id="@+id/measurement_bottom_menu"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:onClick="Click_measurementButton"
+                    android:padding="16dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/measurement_svg" />
+
+                <ImageButton
+                    android:id="@+id/wishlist_bottom_menu"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:onClick="Click_wishlistButton"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/wishlist_svg" />
+
+                <ImageButton
+                    android:id="@+id/mypage_bottom_menu"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/mypage_svg" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <include layout="@layout/drawer" /> <!-- 액티비티 드로워 레이아웃을 메인과 연결시킨거-->
+    </androidx.drawerlayout.widget.DrawerLayout>
+    <!-- 여기까지 드로워 -->
+
+
+</RelativeLayout>
