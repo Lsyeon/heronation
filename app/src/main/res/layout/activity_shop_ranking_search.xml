@@ -21,7 +21,8 @@
         android:scaleType="fitCenter"
         android:background="#ffffff"
         android:layout_gravity="center_vertical"
-        android:src="@drawable/ic_back_button_24dp"/>
+        android:src="@drawable/ic_back_button_24dp"
+        android:onClick="click_back_button"/>
 
     <TextView
         android:layout_marginLeft="16dp"

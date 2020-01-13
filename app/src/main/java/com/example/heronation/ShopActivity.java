@@ -2,6 +2,7 @@ package com.example.heronation;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -42,6 +43,8 @@ public class ShopActivity extends AppCompatActivity implements
     /* 상단 메뉴 버튼을 눌렀을 때 뜨는 레이아웃을 위한 변수들 */
     private DrawerLayout drawerLayout;
     private View drawerView;
+
+ //   private CoordinatorLayout shop_activity_layout;
 
 
     @Override
@@ -102,7 +105,7 @@ public class ShopActivity extends AppCompatActivity implements
         });
         /* 상단바 메뉴 드로워 */
 
-
+    //    shop_activity_layout=(CoordinatorLayout)findViewById(R.id.shop_activity);
 
     }
     /*
@@ -190,6 +193,9 @@ public class ShopActivity extends AppCompatActivity implements
         mPopupWindow.setAnimationStyle(R.style.Animation_AppCompat_DropDownUp);
         // PopUp 창 띄우기
         mPopupWindow.showAtLocation(popupView, Gravity.BOTTOM, 0, 0);
+
+
+
     }
 
     /*

@@ -5,8 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="8dp"
       app:cardCornerRadius="5dp"
-      android:layout_width="136dp"
-      android:layout_height="216dp">
+      android:layout_width="152dp"
+      android:layout_height="232dp">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,8 +14,8 @@
 
     <ImageView
         android:id="@+id/recycler_view_item_best_item_image"
-        android:layout_width="136dp"
-        android:layout_height="136dp"
+        android:layout_width="152dp"
+        android:layout_height="152dp"
         android:scaleType="centerInside"
         tools:src="@drawable/shop_item_example_img_2"/>
 

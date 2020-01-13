@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/shop_activity"
     tools:context=".ShopActivity">
     <!--drawerlayout 안에 상단바랑 frameLayout이 있음-->
     <androidx.drawerlayout.widget.DrawerLayout

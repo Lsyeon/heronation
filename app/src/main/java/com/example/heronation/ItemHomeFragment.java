@@ -20,7 +20,6 @@ public class ItemHomeFragment extends Fragment {
     private ItemVerticalAdapter verticalAdapter;
     private ArrayList<ShopItemPackage> item_list=new ArrayList<>();
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
