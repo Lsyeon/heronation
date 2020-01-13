@@ -20,6 +20,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.PopupWindow;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -44,8 +46,10 @@ public class ShopActivity extends AppCompatActivity implements
     private DrawerLayout drawerLayout;
     private View drawerView;
 
- //   private CoordinatorLayout shop_activity_layout;
-
+    /* 필터 버튼 눌렀을 때, seekBar 설정에 필요한 변수들 */
+    int number=0;
+    private SeekBar seekBar;
+    private TextView age;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,8 +108,6 @@ public class ShopActivity extends AppCompatActivity implements
             }
         });
         /* 상단바 메뉴 드로워 */
-
-    //    shop_activity_layout=(CoordinatorLayout)findViewById(R.id.shop_activity);
 
     }
     /*
@@ -195,6 +197,40 @@ public class ShopActivity extends AppCompatActivity implements
         mPopupWindow.showAtLocation(popupView, Gravity.BOTTOM, 0, 0);
 
 
+        seekBar=(SeekBar)popupView.findViewById(R.id.seekBar);
+        age=(TextView)popupView.findViewById(R.id.shop_ranking_search_age);
+        /* seekBar의 값이 설정되었을 때, textview를 설정해준다. */
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                number=seekBar.getProgress();
+                   if(number==0){
+                    age.setText("10대");
+                }else if(number==1){
+                    age.setText("20대 초반");
+                }else if(number==2){
+                    age.setText("20대 중반");
+                } else if(number==3){
+                    age.setText("20대 후반");
+                } else if(number==4){
+                    age.setText("30대 초반");
+                }else if(number==5){
+                    age.setText("30대 중반");
+                }else if(number==6){
+                    age.setText("30대 후반");
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                number=seekBar.getProgress();
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                number=seekBar.getProgress();
+            }
+        });
 
     }
 
