@@ -66,13 +66,15 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/button_background"
+                        android:onClick="Click_userModify_btn"
                         android:text="회원정보 수정" />
 
                     <LinearLayout
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="210dp"
-                        android:orientation="vertical">
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="20dp"
+                        android:gravity="bottom"
+                        android:orientation="vertical">>
 
                         <Button
                             android:id="@+id/mypage_userTermsOfUse_btn"
