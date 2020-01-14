@@ -1,16 +1,20 @@
 package com.example.heronation;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ViewFlipper;
 
 import java.util.ArrayList;
 
@@ -22,6 +26,13 @@ public class ItemHomeFragment extends Fragment {
     private ArrayList<ShopItemPackage> item_list1=new ArrayList<>();
     private ArrayList<ShopItemPackage> item_list2=new ArrayList<>();
     private ArrayList<ShopItemPackage> item_list3=new ArrayList<>();
+
+    /* 배너 슬라이딩을 위한 변수 */
+    private ImageAdapter imageAdapter;
+    private ViewPager viewPager;
+
+    /* 검색창 */
+    private EditText search_item;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -56,6 +67,21 @@ public class ItemHomeFragment extends Fragment {
         /* 레이아웃 매니저 수직으로 지정 */
         item_recyclerView3.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
         item_recyclerView3.setAdapter(verticalAdapter3);
+
+        /*  검색창 클릭했을 때, 아이템 검색 액티비티로 이동 */
+        search_item=(EditText)rootView.findViewById(R.id.item_home_search_edittext);
+        search_item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getContext(),ItemSearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        /* 이미지 슬라이딩을 위해 뷰페이저를 이용했고, 이를 설정해주는 이미지 어댑터를 설정하여 슬라이딩 구현 */
+        viewPager=(ViewPager)rootView.findViewById(R.id.image_view_home);
+        imageAdapter=new ImageAdapter(getActivity());
+        viewPager.setAdapter(imageAdapter);
 
         return rootView;
     }

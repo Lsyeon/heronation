@@ -157,7 +157,7 @@
                     android:layout_weight="1"
                     android:background="#ffffff"
                     android:scaleType="centerInside"
-                    android:src="@drawable/mypage_svg" />
+                    android:src="@drawable/mypage_svg2" />
             </LinearLayout>
 
         </RelativeLayout>

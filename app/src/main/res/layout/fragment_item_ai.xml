@@ -14,11 +14,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/image_view_ai"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/banner_example" />
+             />
 
 
             <androidx.recyclerview.widget.RecyclerView

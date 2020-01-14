@@ -71,6 +71,8 @@ public class ShopActivity extends AppCompatActivity implements
     private Button style_school;
     private Button style_romantic;
     private Button style_office;
+    private Button filter_return;
+    private Button filter_finish;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -199,7 +201,7 @@ public class ShopActivity extends AppCompatActivity implements
     void open_panel(){
 
         /* 필터 PopUp창 띄우기 */
-        PopupWindow mPopupWindow;
+        final PopupWindow mPopupWindow;
         View popupView = getLayoutInflater().inflate(R.layout.activity_filter_pop_up, null);
         mPopupWindow = new PopupWindow(popupView);
         mPopupWindow.setWindowLayoutMode(WindowManager.LayoutParams.MATCH_PARENT,
@@ -288,6 +290,10 @@ public class ShopActivity extends AppCompatActivity implements
         style_school = (Button) popupView.findViewById(R.id.shop_filter_style_school);
         style_romantic = (Button) popupView.findViewById(R.id.shop_filter_style_romantic);
         style_office = (Button) popupView.findViewById(R.id.shop_filter_style_office);
+
+        /* 필터 초기화, 완료 버튼 */
+        filter_return=(Button)popupView.findViewById(R.id.shop_filter_return);
+        filter_finish=(Button)popupView.findViewById(R.id.shop_filter_finish);
 
         /* 버튼 클릭 시 색상, 글자색 변경, 정보 전달할 때 이용 */
         gender_male.setOnClickListener(new View.OnClickListener() {
@@ -522,6 +528,61 @@ public class ShopActivity extends AppCompatActivity implements
                     style_office.setSelected(false);
                     style_office.setTextColor(Color.parseColor("#000000"));
                 }
+            }
+        });
+
+        /* 초기화 버튼 눌렀을 때 */
+        filter_return.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gender_male.setSelected(false);
+                gender_male.setTextColor(Color.parseColor("#000000"));
+                gender_female.setSelected(false);
+                gender_female.setTextColor(Color.parseColor("#000000"));
+                category_cloth.setSelected(false);
+                category_cloth.setTextColor(Color.parseColor("#000000"));
+                category_acc.setSelected(false);
+                category_acc.setTextColor(Color.parseColor("#000000"));
+                category_bag.setSelected(false);
+                category_bag.setTextColor(Color.parseColor("#000000"));
+                category_shoes.setSelected(false);
+                category_shoes.setTextColor(Color.parseColor("#000000"));
+                style_feminine.setSelected(false);
+                style_feminine.setTextColor(Color.parseColor("#000000"));
+                style_modern.setSelected(false);
+                style_modern.setTextColor(Color.parseColor("#000000"));
+                style_simple.setSelected(false);
+                style_simple.setTextColor(Color.parseColor("#000000"));
+
+                style_lovely.setTextColor(Color.parseColor("#000000"));
+                style_lovely.setSelected(false);
+                style_unique.setTextColor(Color.parseColor("#000000"));
+                style_unique.setSelected(false);
+                style_missy.setTextColor(Color.parseColor("#000000"));
+                style_missy.setSelected(false);
+                style_campus.setTextColor(Color.parseColor("#000000"));
+                style_campus.setSelected(false);
+                style_vintage.setTextColor(Color.parseColor("#000000"));
+                style_vintage.setSelected(false);
+                style_sexy.setTextColor(Color.parseColor("#000000"));
+                style_sexy.setSelected(false);
+                style_school.setTextColor(Color.parseColor("#000000"));
+                style_school.setSelected(false);
+                style_romantic.setTextColor(Color.parseColor("#000000"));
+                style_romantic.setSelected(false);
+                style_office.setTextColor(Color.parseColor("#000000"));
+                style_office.setSelected(false);
+
+                //seekBar 20대 중반으로 설정 (회원가입 정보 있을 땐, 나이 기반 설정으로 수정)
+                seekBar.setProgress(2);
+            }
+        });
+
+        //완료 버튼 눌렀을 때 창닫기, 정보 전달할 때 사용하기
+        filter_finish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mPopupWindow.dismiss();
             }
         });
 

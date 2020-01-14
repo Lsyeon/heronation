@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +33,10 @@ public class ItemNewFragment extends Fragment {
 
     private ItemNewAdapter newAdapter3;
     private ArrayList<ShopItemPackage> item_list3=new ArrayList<>();
+
+    /* 배너 슬라이딩을 위한 변수 */
+    private ImageAdapter imageAdapter;
+    private ViewPager viewPager;
 
     /* 스피너 */
     private Spinner spinner_category;
@@ -86,6 +91,11 @@ public class ItemNewFragment extends Fragment {
         adapter_order.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         spinner_category.setAdapter(adapter_category);
         spinner_order.setAdapter(adapter_order);
+
+        /* 이미지 슬라이딩을 위해 뷰페이저를 이용했고, 이를 설정해주는 이미지 어댑터를 설정하여 슬라이딩 구현 */
+        viewPager=(ViewPager)rootView.findViewById(R.id.image_view_new);
+        imageAdapter=new ImageAdapter(getActivity());
+        viewPager.setAdapter(imageAdapter);
 
         return rootView;
     }

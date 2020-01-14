@@ -14,10 +14,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <ImageView
+
+        <!--배너 사진 스케일 타입 변경하려면 image_slider.xml에서 변경해야함 -->  ​
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/image_view_home"
             android:layout_width="match_parent"
             android:layout_height="160dp"
-            android:src="@drawable/banner_example"
             android:scaleType="centerCrop"/>
 
         <LinearLayout
