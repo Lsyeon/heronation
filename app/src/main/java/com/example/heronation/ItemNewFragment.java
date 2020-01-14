@@ -46,9 +46,8 @@ public class ItemNewFragment extends Fragment {
 
         // Inflate the layout for this fragment
         ViewGroup rootView=(ViewGroup)inflater.inflate(R.layout.fragment_item_new,container,false);
-        /*
 
-          */
+        /* 첫번째 리사이클러뷰*/
         item_recyclerView1=(RecyclerView)rootView.findViewById(R.id.item_new_recyclerView1);
         /* 아이템 수직 리사이클러뷰 객체 생성 */
         newAdapter1=new ItemVerticalAdapter(item_list1,getActivity()); //New Adapter 안에 horizontal adapter를 선언하여 이에 대한 레이아웃을 horizontal로 지정
@@ -56,6 +55,7 @@ public class ItemNewFragment extends Fragment {
         item_recyclerView1.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
         item_recyclerView1.setAdapter(newAdapter1);
 
+        /* 두번째 리사이클러뷰*/
         item_recyclerView2=(RecyclerView)rootView.findViewById(R.id.item_new_recyclerView2);
         /* 아이템 수직 리사이클러뷰 객체 생성 */
         newAdapter2=new ItemVerticalAdapter(item_list2,getActivity());  //New Adapter 안에 horizontal adapter를 선언하여 이에 대한 레이아웃을 horizontal로 지정
@@ -63,6 +63,7 @@ public class ItemNewFragment extends Fragment {
         item_recyclerView2.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
         item_recyclerView2.setAdapter(newAdapter2);
 
+        /* 세번째 리사이클러뷰*/
         item_recyclerView_grid=(RecyclerView)rootView.findViewById(R.id.item_new_recyclerView_grid);
         /* 아이템 수직 리사이클러뷰 객체 생성 */
         newAdapter3=new ItemNewAdapter(item_list3,getActivity()); //New Adapter 안에 horizontal adapter를 선언하여 이에 대한 레이아웃을 Grid로 지정
