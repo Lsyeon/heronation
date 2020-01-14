@@ -16,7 +16,7 @@
         android:id="@+id/recycler_view_item_best_item_image"
         android:layout_width="152dp"
         android:layout_height="152dp"
-        android:scaleType="centerInside"
+        android:scaleType="centerCrop"
         tools:src="@drawable/shop_item_example_img_2"/>
 
     <LinearLayout
