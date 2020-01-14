@@ -10,6 +10,7 @@ import androidx.slidingpanelayout.widget.SlidingPaneLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -46,10 +47,30 @@ public class ShopActivity extends AppCompatActivity implements
     private DrawerLayout drawerLayout;
     private View drawerView;
 
-    /* 필터 버튼 눌렀을 때, seekBar 설정에 필요한 변수들 */
+    /* Shop Ranking에 필터 버튼 눌렀을 때, seekBar 설정에 필요한 변수들 */
     int number=0;
     private SeekBar seekBar;
     private TextView age;
+    /* Shop Ranking에 필터 버튼에 필요한 변수들 */
+    private Button gender_male;
+    private Button gender_female;
+    private Button category_cloth;
+    private Button category_acc;
+    private Button category_bag;
+    private Button category_shoes;
+    private Button style_feminine;
+    private Button style_modern;
+    private Button style_simple;
+    private Button style_lovely;
+    private Button style_unique;
+    private Button style_missy;
+    private Button style_campus;
+    private Button style_vintage;
+    private Button style_sexy;
+    private Button style_school;
+    private Button style_romantic;
+    private Button style_office;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -196,7 +217,6 @@ public class ShopActivity extends AppCompatActivity implements
         // PopUp 창 띄우기
         mPopupWindow.showAtLocation(popupView, Gravity.BOTTOM, 0, 0);
 
-
         seekBar=(SeekBar)popupView.findViewById(R.id.seekBar);
         age=(TextView)popupView.findViewById(R.id.shop_ranking_search_age);
         /* seekBar의 값이 설정되었을 때, textview를 설정해준다. */
@@ -231,6 +251,264 @@ public class ShopActivity extends AppCompatActivity implements
                 number=seekBar.getProgress();
             }
         });
+
+        /* 필터 버튼 정보 전달, 버튼 색, 글자 색 변경 위한 변수들 */
+        gender_male = (Button) popupView.findViewById(R.id.shop_filter_gender_male);
+        gender_female = (Button) popupView.findViewById(R.id.shop_filter_gender_female);
+        category_cloth = (Button) popupView.findViewById(R.id.shop_filter_category_cloth);
+        category_acc = (Button) popupView.findViewById(R.id.shop_filter_category_acc);
+        category_bag = (Button) popupView.findViewById(R.id.shop_filter_category_bag);
+        category_shoes = (Button) popupView.findViewById(R.id.shop_filter_category_shoes);
+        style_feminine = (Button) popupView.findViewById(R.id.shop_filter_style_feminine);
+        style_modern = (Button) popupView.findViewById(R.id.shop_filter_style_modern);
+        style_simple = (Button) popupView.findViewById(R.id.shop_filter_style_simple);
+        style_lovely = (Button) popupView.findViewById(R.id.shop_filter_style_lovely);
+        style_unique = (Button) popupView.findViewById(R.id.shop_filter_style_unique);
+        style_missy = (Button) popupView.findViewById(R.id.shop_filter_style_missy);
+        style_campus = (Button) popupView.findViewById(R.id.shop_filter_style_campus);
+        style_vintage = (Button) popupView.findViewById(R.id.shop_filter_style_vintage);
+        style_sexy = (Button) popupView.findViewById(R.id.shop_filter_style_sexy);
+        style_school = (Button) popupView.findViewById(R.id.shop_filter_style_school);
+        style_romantic = (Button) popupView.findViewById(R.id.shop_filter_style_romantic);
+        style_office = (Button) popupView.findViewById(R.id.shop_filter_style_office);
+
+        /* 버튼 클릭 시 색상, 글자색 변경, 정보 전달할 때 이용 */
+        gender_male.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(gender_male.isSelected()==false) {
+                    gender_male.setSelected(true);
+                    gender_male.setTextColor(Color.parseColor("#ffffff"));
+                } else{
+                    gender_male.setSelected(false);
+                    gender_male.setTextColor(Color.parseColor("#000000"));
+                }
+            }
+        });
+
+        gender_female.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(gender_female.isSelected()==false) {
+                    gender_female.setSelected(true);
+                    gender_female.setTextColor(Color.parseColor("#ffffff"));
+                } else{
+                    gender_female.setSelected(false);
+                    gender_female.setTextColor(Color.parseColor("#000000"));
+                }
+            }
+
+        });
+
+        category_cloth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(category_cloth.isSelected()==false) {
+                    category_cloth.setSelected(true);
+                    category_cloth.setTextColor(Color.parseColor("#ffffff"));
+                } else{
+                    category_cloth.setSelected(false);
+                    category_cloth.setTextColor(Color.parseColor("#000000"));
+                }
+            }
+        });
+
+        category_acc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(category_acc.isSelected()==false) {
+                    category_acc.setSelected(true);
+                    category_acc.setTextColor(Color.parseColor("#ffffff"));
+                } else{
+                    category_acc.setSelected(false);
+                    category_acc.setTextColor(Color.parseColor("#000000"));
+                }
+            }
+        });
+
+        category_bag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(category_bag.isSelected()==false) {
+                    category_bag.setSelected(true);
+                    category_bag.setTextColor(Color.parseColor("#ffffff"));
+                } else{
+                    category_bag.setSelected(false);
+                    category_bag.setTextColor(Color.parseColor("#000000"));
+                }
+            }
+        });
+
+        category_shoes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(category_shoes.isSelected()==false) {
+                    category_shoes.setSelected(true);
+                    category_shoes.setTextColor(Color.parseColor("#ffffff"));
+                } else{
+                    category_shoes.setSelected(false);
+                    category_shoes.setTextColor(Color.parseColor("#000000"));
+                }
+            }
+        });
+
+        style_feminine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(style_feminine.isSelected()==false) {
+                    style_feminine.setSelected(true);
+                    style_feminine.setTextColor(Color.parseColor("#ffffff"));
+                } else{
+                    style_feminine.setSelected(false);
+                    style_feminine.setTextColor(Color.parseColor("#000000"));
+                }
+            }
+        });
+
+        style_modern.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(style_modern.isSelected()==false) {
+                    style_modern.setSelected(true);
+                    style_modern.setTextColor(Color.parseColor("#ffffff"));
+                } else{
+                    style_modern.setSelected(false);
+                    style_modern.setTextColor(Color.parseColor("#000000"));
+                }
+            }
+        });
+
+        style_simple.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(style_simple.isSelected()==false) {
+                    style_simple.setSelected(true);
+                    style_simple.setTextColor(Color.parseColor("#ffffff"));
+                } else{
+                    style_simple.setSelected(false);
+                    style_simple.setTextColor(Color.parseColor("#000000"));
+                }
+            }
+        });
+
+        style_lovely.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(style_lovely.isSelected()==false) {
+                    style_lovely.setSelected(true);
+                    style_lovely.setTextColor(Color.parseColor("#ffffff"));
+                } else{
+                    style_lovely.setSelected(false);
+                    style_lovely.setTextColor(Color.parseColor("#000000"));
+                }
+            }
+        });
+
+        style_unique.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(style_unique.isSelected()==false) {
+                    style_unique.setSelected(true);
+                    style_unique.setTextColor(Color.parseColor("#ffffff"));
+                } else{
+                    style_unique.setSelected(false);
+                    style_unique.setTextColor(Color.parseColor("#000000"));
+                }
+            }
+        });
+
+        style_missy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(style_missy.isSelected()==false) {
+                    style_missy.setSelected(true);
+                    style_missy.setTextColor(Color.parseColor("#ffffff"));
+                } else{
+                    style_missy.setSelected(false);
+                    style_missy.setTextColor(Color.parseColor("#000000"));
+                }
+            }
+        });
+
+        style_campus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(style_campus.isSelected()==false) {
+                    style_campus.setSelected(true);
+                    style_campus.setTextColor(Color.parseColor("#ffffff"));
+                } else{
+                    style_campus.setSelected(false);
+                    style_campus.setTextColor(Color.parseColor("#000000"));
+                }
+            }
+        });
+
+        style_vintage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(style_vintage.isSelected()==false) {
+                    style_vintage.setSelected(true);
+                    style_vintage.setTextColor(Color.parseColor("#ffffff"));
+                } else{
+                    style_vintage.setSelected(false);
+                    style_vintage.setTextColor(Color.parseColor("#000000"));
+                }
+            }
+        });
+
+        style_sexy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(style_sexy.isSelected()==false) {
+                    style_sexy.setSelected(true);
+                    style_sexy.setTextColor(Color.parseColor("#ffffff"));
+                } else{
+                    style_sexy.setSelected(false);
+                    style_sexy.setTextColor(Color.parseColor("#000000"));
+                }
+            }
+        });
+
+        style_school.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(style_school.isSelected()==false) {
+                    style_school.setSelected(true);
+                    style_school.setTextColor(Color.parseColor("#ffffff"));
+                } else{
+                    style_school.setSelected(false);
+                    style_school.setTextColor(Color.parseColor("#000000"));
+                }
+            }
+        });
+
+        style_romantic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(style_romantic.isSelected()==false) {
+                    style_romantic.setSelected(true);
+                    style_romantic.setTextColor(Color.parseColor("#ffffff"));
+                } else{
+                    style_romantic.setSelected(false);
+                    style_romantic.setTextColor(Color.parseColor("#000000"));
+                }
+            }
+        });
+
+        style_office.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(style_office.isSelected()==false) {
+                    style_office.setSelected(true);
+                    style_office.setTextColor(Color.parseColor("#ffffff"));
+                } else{
+                    style_office.setSelected(false);
+                    style_office.setTextColor(Color.parseColor("#000000"));
+                }
+            }
+        });
+
+
 
     }
 

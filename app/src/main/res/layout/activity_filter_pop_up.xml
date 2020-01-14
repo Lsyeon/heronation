@@ -28,10 +28,10 @@
 
             <Button
                 android:id="@+id/shop_filter_gender_male"
-                android:layout_marginLeft="64dp"
+                android:layout_marginLeft="48dp"
                 android:layout_width="wrap_content"
                 android:layout_height="24dp"
-                android:background="@drawable/button_background"
+                android:background="@drawable/selector_selected"
                 android:text="남자"
                 android:textSize="10sp" />
 
@@ -40,7 +40,7 @@
                 android:layout_marginLeft="24dp"
                 android:layout_width="wrap_content"
                 android:layout_height="24dp"
-                android:background="@drawable/button_background"
+                android:background="@drawable/selector_selected"
                 android:text="여자"
                 android:textSize="10sp" />
 
@@ -115,7 +115,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="24dp"
-                    android:background="@drawable/button_background"
+                    android:background="@drawable/selector_selected"
                     android:text="의류"
                     android:textSize="10sp" />
 
@@ -125,7 +125,7 @@
                     android:layout_weight="1"
                     android:layout_height="24dp"
                     android:layout_marginLeft="8dp"
-                    android:background="@drawable/button_background"
+                    android:background="@drawable/selector_selected"
                     android:text="잡화"
                     android:textSize="10sp" />
 
@@ -136,7 +136,7 @@
                     android:layout_weight="1"
                     android:layout_height="24dp"
                     android:layout_marginLeft="8dp"
-                    android:background="@drawable/button_background"
+                    android:background="@drawable/selector_selected"
                     android:text="가방"
                     android:textSize="10sp" />
 
@@ -147,7 +147,7 @@
                     android:layout_weight="1"
                     android:layout_height="24dp"
                     android:layout_marginLeft="8dp"
-                    android:background="@drawable/button_background"
+                    android:background="@drawable/selector_selected"
                     android:text="슈즈"
                     android:textSize="10sp" />
 
@@ -186,7 +186,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="24dp"
-                    android:background="@drawable/button_background"
+                    android:background="@drawable/selector_selected"
                     android:text="페미닌"
                     android:textSize="10sp" />
 
@@ -196,7 +196,7 @@
                     android:layout_weight="1"
                     android:layout_height="24dp"
                     android:layout_marginLeft="8dp"
-                    android:background="@drawable/button_background"
+                    android:background="@drawable/selector_selected"
                     android:text="모던시크"
                     android:textSize="10sp" />
 
@@ -207,7 +207,7 @@
                     android:layout_weight="1"
                     android:layout_height="24dp"
                     android:layout_marginLeft="8dp"
-                    android:background="@drawable/button_background"
+                    android:background="@drawable/selector_selected"
                     android:text="심플베이직"
                     android:textSize="10sp" />
 
@@ -218,7 +218,7 @@
                     android:layout_weight="1"
                     android:layout_height="24dp"
                     android:layout_marginLeft="8dp"
-                    android:background="@drawable/button_background"
+                    android:background="@drawable/selector_selected"
                     android:text="러블리"
                     android:textSize="10sp" />
 
@@ -235,7 +235,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="24dp"
-                    android:background="@drawable/button_background"
+                    android:background="@drawable/selector_selected"
                     android:text="유니크"
                     android:textSize="10sp" />
 
@@ -245,7 +245,7 @@
                     android:layout_weight="1"
                     android:layout_height="24dp"
                     android:layout_marginLeft="8dp"
-                    android:background="@drawable/button_background"
+                    android:background="@drawable/selector_selected"
                     android:text="미시스타일"
                     android:textSize="10sp" />
 
@@ -256,7 +256,7 @@
                     android:layout_weight="1"
                     android:layout_height="24dp"
                     android:layout_marginLeft="8dp"
-                    android:background="@drawable/button_background"
+                    android:background="@drawable/selector_selected"
                     android:text="캠퍼스룩"
                     android:textSize="10sp" />
 
@@ -267,7 +267,7 @@
                     android:layout_weight="1"
                     android:layout_height="24dp"
                     android:layout_marginLeft="8dp"
-                    android:background="@drawable/button_background"
+                    android:background="@drawable/selector_selected"
                     android:text="빈티지"
                     android:textSize="10sp" />
 
@@ -284,7 +284,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="24dp"
-                    android:background="@drawable/button_background"
+                    android:background="@drawable/selector_selected"
                     android:text="섹시글램"
                     android:textSize="10sp" />
 
@@ -294,7 +294,7 @@
                     android:layout_weight="1"
                     android:layout_height="24dp"
                     android:layout_marginLeft="8dp"
-                    android:background="@drawable/button_background"
+                    android:background="@drawable/selector_selected"
                     android:text="스쿨룩"
                     android:textSize="10sp" />
 
@@ -305,7 +305,7 @@
                     android:layout_weight="1"
                     android:layout_height="24dp"
                     android:layout_marginLeft="8dp"
-                    android:background="@drawable/button_background"
+                    android:background="@drawable/selector_selected"
                     android:text="로맨틱"
                     android:textSize="10sp" />
 
@@ -316,7 +316,7 @@
                     android:layout_weight="1"
                     android:layout_height="24dp"
                     android:layout_marginLeft="8dp"
-                    android:background="@drawable/button_background"
+                    android:background="@drawable/selector_selected"
                     android:text="오피스룩"
                     android:textSize="10sp" />
 
