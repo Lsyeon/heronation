@@ -82,6 +82,7 @@ public class myPageConnectingActivity extends AppCompatActivity {
         Intent intent=new Intent(this, userModifyActivity.class);
         startActivity(intent);
     }
+
     public void Click_itemButton(View view){
         Intent intent=new Intent(this, ItemActivity.class);
         startActivity(intent);

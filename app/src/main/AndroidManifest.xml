@@ -13,8 +13,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".userModifyActivity"></activity>
         <activity android:name=".ShopRankingSearchActivity" />
+        <activity android:name=".myPageConnectingActivity"/>
         <activity android:name=".loginPageActivity" />
-        <activity android:name=".myPageConnectingActivity" />
         <activity android:name=".FilterPopUpActivity" />
         <activity android:name=".MeasurementActivity" />
         <activity android:name=".WishlistActivity" />
