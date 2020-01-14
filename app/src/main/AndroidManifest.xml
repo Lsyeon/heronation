@@ -14,7 +14,6 @@
         <activity android:name=".ShopRankingSearchActivity"></activity>
         <activity android:name=".loginPageActivity" />
         <activity android:name=".myPageConnectingActivity"></activity>
-        <activity android:name=".loginPageActivity" />
         <activity android:name=".FilterPopUpActivity" />
         <activity android:name=".MeasurementActivity" />
         <activity android:name=".WishlistActivity" />
