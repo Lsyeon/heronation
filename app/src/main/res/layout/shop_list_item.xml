@@ -87,7 +87,7 @@
             android:layout_width="16dp"
             android:layout_height="16dp"
             android:scaleType="centerInside"
-            android:src="@drawable/favorite_star"
+            android:src="@drawable/selector_star"
             android:layout_alignParentRight="true"
             />
 
