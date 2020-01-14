@@ -77,15 +77,11 @@ public class ItemHomeFragment extends Fragment {
         item_list1.add(new ShopItemPackage("신상품",shopItem1));
 
         ArrayList<ShopItem> shopItem2=new ArrayList<>();
-        shopItem2.add(new ShopItem("https://www.ggsing.com/web/product/medium/20191122/31de60c9a2096b6bf648d111684eacb7.gif",
-                "앙고라머플러반코트", "고고싱", 53000, 50000));
-        shopItem2.add(new ShopItem("https://www.ggsing.com/web/product/medium/20191128/87b5a0ae6e03d0977e58b787bab5d1ac.gif",
+        shopItem2.add(new ShopItem("https://shop-phinf.pstatic.net/20191125_109/1574647089099J0mEe_JPEG/12007827730061169_1986553615.jpg?type=f260",
                 "떡볶이코트", "고고싱", 53000, 50000));
-        shopItem2.add(new ShopItem("https://www.ggsing.com/web/product/medium/201910/ec8129532e1a12ff2728d6c45ba51d39.gif",
-                "떡볶이코트", "고고싱", 53000, 50000));
-        shopItem2.add(new ShopItem("https://www.ggsing.com/web/product/medium/201911/1d060a6ef06b95fcff02f2237d661f82.gif",
+        shopItem2.add(new ShopItem( "https://shop-phinf.pstatic.net/20191218_109/1576635660713BY1b0_JPEG/13997203139003091_948360031.jpg?type=f260",
                 "앙고라머플러반코트", "고고싱", 53000, 50000));
-        shopItem2.add(new ShopItem("https://www.ggsing.com/web/product/medium/201910/ec8129532e1a12ff2728d6c45ba51d39.gif",
+        shopItem2.add(new ShopItem("https://shop-phinf.pstatic.net/20191217_209/1576546329655vHwlr_JPEG/13907068283633976_1742837673.jpg?type=f260",
                 "앙고라머플러반코트", "고고싱", 53000, 50000));
         // 상품들 묶음 추가
         item_list2.add(new ShopItemPackage("내 사이즈 추천",shopItem2));
