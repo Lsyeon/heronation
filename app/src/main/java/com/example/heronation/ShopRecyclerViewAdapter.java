@@ -1,6 +1,7 @@
 package com.example.heronation;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,7 +62,11 @@ public class ShopRecyclerViewAdapter extends RecyclerView.Adapter<ShopRecyclerVi
         holder.favorite_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    holder.favorite_button.setImageResource(R.drawable.favorite_star2);
+                if(holder.favorite_button.isSelected()==false) { //별이 선택되었을 경우
+                    holder.favorite_button.setSelected(true);
+                } else{
+                    holder.favorite_button.setSelected(false); //별이 선택되지 않았을 경우
+                }
             }
         });
 

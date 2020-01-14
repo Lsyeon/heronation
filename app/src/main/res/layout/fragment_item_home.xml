@@ -2,22 +2,24 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="#f3f3f3"
     tools:context=".ItemHomeFragment">
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <ImageView
+
+        <!--배너 사진 스케일 타입 변경하려면 image_slider.xml에서 변경해야함 -->  ​
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/image_view_home"
             android:layout_width="match_parent"
             android:layout_height="160dp"
-            android:src="@drawable/banner_example"
             android:scaleType="centerCrop"/>
 
         <LinearLayout
@@ -78,7 +80,17 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/item_home_recyclerViewVertical"
+            android:id="@+id/item_home_recyclerViewVertical1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/item_home_recyclerViewVertical2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/item_home_recyclerViewVertical3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

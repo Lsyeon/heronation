@@ -1,24 +1,38 @@
 package com.example.heronation;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ViewFlipper;
 
 import java.util.ArrayList;
 
 
 public class ItemHomeFragment extends Fragment {
-    private RecyclerView item_recyclerView;
-    private ItemVerticalAdapter verticalAdapter;
-    private ArrayList<ShopItemPackage> item_list=new ArrayList<>();
+    private RecyclerView item_recyclerView1;
+    private RecyclerView item_recyclerView2;
+    private RecyclerView item_recyclerView3;
+    private ArrayList<ShopItemPackage> item_list1=new ArrayList<>();
+    private ArrayList<ShopItemPackage> item_list2=new ArrayList<>();
+    private ArrayList<ShopItemPackage> item_list3=new ArrayList<>();
+
+    /* 배너 슬라이딩을 위한 변수 */
+    private ImageAdapter imageAdapter;
+    private ViewPager viewPager;
+
+    /* 검색창 */
+    private EditText search_item;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,19 +43,46 @@ public class ItemHomeFragment extends Fragment {
 
         // Inflate the layout for this fragment
         ViewGroup rootView=(ViewGroup)inflater.inflate(R.layout.fragment_item_home,container,false);
-        /*
-         * (ex)  수평 리사이클러뷰
-         *       수평 리사이클러뷰
-         *       수평 리사이클러뷰
-         *  3개의 수평 리사이클러뷰가 보여서 수직 리사이클러뷰가 됨
-         * */
-        item_recyclerView=(RecyclerView)rootView.findViewById(R.id.item_home_recyclerViewVertical);
 
+        /* 첫번째 리사이클러뷰 */
+        item_recyclerView1=(RecyclerView)rootView.findViewById(R.id.item_home_recyclerViewVertical1);
         /* 아이템 수직 리사이클러뷰 객체 생성 */
-        verticalAdapter=new ItemVerticalAdapter(item_list,getActivity());
+        ItemVerticalAdapter verticalAdapter1=new ItemVerticalAdapter(item_list1,getActivity());
         /* 레이아웃 매니저 수직으로 지정 */
-        item_recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
-        item_recyclerView.setAdapter(verticalAdapter);
+        item_recyclerView1.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
+        item_recyclerView1.setAdapter(verticalAdapter1);
+
+        /* 두번째 리사이클러뷰 */
+        item_recyclerView2=(RecyclerView)rootView.findViewById(R.id.item_home_recyclerViewVertical2);
+        /* 아이템 수직 리사이클러뷰 객체 생성 */
+        ItemVerticalAdapter verticalAdapter2=new ItemVerticalAdapter(item_list2,getActivity());
+        /* 레이아웃 매니저 수직으로 지정 */
+        item_recyclerView2.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
+        item_recyclerView2.setAdapter(verticalAdapter2);
+
+        /* 세번째 리사이클러뷰 */
+        item_recyclerView3=(RecyclerView)rootView.findViewById(R.id.item_home_recyclerViewVertical3);
+        /* 아이템 수직 리사이클러뷰 객체 생성 */
+        ItemVerticalAdapter verticalAdapter3=new ItemVerticalAdapter(item_list3,getActivity());
+        /* 레이아웃 매니저 수직으로 지정 */
+        item_recyclerView3.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
+        item_recyclerView3.setAdapter(verticalAdapter3);
+
+        /*  검색창 클릭했을 때, 아이템 검색 액티비티로 이동 */
+        search_item=(EditText)rootView.findViewById(R.id.item_home_search_edittext);
+        search_item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getContext(),ItemSearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        /* 이미지 슬라이딩을 위해 뷰페이저를 이용했고, 이를 설정해주는 이미지 어댑터를 설정하여 슬라이딩 구현 */
+        viewPager=(ViewPager)rootView.findViewById(R.id.image_view_home);
+        imageAdapter=new ImageAdapter(getActivity());
+        viewPager.setAdapter(imageAdapter);
+
         return rootView;
     }
 
@@ -59,21 +100,17 @@ public class ItemHomeFragment extends Fragment {
         shopItem1.add(new ShopItem("https://slowand.com/web/product/medium/20191231/4ef6dd9fedd4a31ed7d56d427fc90b67.webp",
                 "오트밀 세인트 핸드메이드 코트", "고고싱", 53000, 50000));
         // 상품들 묶음 추가
-        item_list.add(new ShopItemPackage("신상품",shopItem1));
+        item_list1.add(new ShopItemPackage("신상품",shopItem1));
 
         ArrayList<ShopItem> shopItem2=new ArrayList<>();
-        shopItem2.add(new ShopItem("https://www.ggsing.com/web/product/medium/20191122/31de60c9a2096b6bf648d111684eacb7.gif",
-                "앙고라머플러반코트", "고고싱", 53000, 50000));
-        shopItem2.add(new ShopItem("https://www.ggsing.com/web/product/medium/20191128/87b5a0ae6e03d0977e58b787bab5d1ac.gif",
+        shopItem2.add(new ShopItem("https://shop-phinf.pstatic.net/20191125_109/1574647089099J0mEe_JPEG/12007827730061169_1986553615.jpg?type=f260",
                 "떡볶이코트", "고고싱", 53000, 50000));
-        shopItem2.add(new ShopItem("https://www.ggsing.com/web/product/medium/201910/ec8129532e1a12ff2728d6c45ba51d39.gif",
-                "떡볶이코트", "고고싱", 53000, 50000));
-        shopItem2.add(new ShopItem("https://www.ggsing.com/web/product/medium/201911/1d060a6ef06b95fcff02f2237d661f82.gif",
+        shopItem2.add(new ShopItem( "https://shop-phinf.pstatic.net/20191218_109/1576635660713BY1b0_JPEG/13997203139003091_948360031.jpg?type=f260",
                 "앙고라머플러반코트", "고고싱", 53000, 50000));
-        shopItem2.add(new ShopItem("https://www.ggsing.com/web/product/medium/201910/ec8129532e1a12ff2728d6c45ba51d39.gif",
+        shopItem2.add(new ShopItem("https://shop-phinf.pstatic.net/20191217_209/1576546329655vHwlr_JPEG/13907068283633976_1742837673.jpg?type=f260",
                 "앙고라머플러반코트", "고고싱", 53000, 50000));
         // 상품들 묶음 추가
-        item_list.add(new ShopItemPackage("내 사이즈 추천",shopItem2));
+        item_list2.add(new ShopItemPackage("내 사이즈 추천",shopItem2));
 
         ArrayList<ShopItem> shopItem3=new ArrayList<>();
         shopItem3.add(new ShopItem("https://www.ggsing.com/web/product/medium/20191122/31de60c9a2096b6bf648d111684eacb7.gif",
@@ -87,7 +124,7 @@ public class ItemHomeFragment extends Fragment {
         shopItem3.add(new ShopItem("https://www.ggsing.com/web/product/medium/201910/ec8129532e1a12ff2728d6c45ba51d39.gif",
                 "앙고라머플러반코트", "고고싱", 53000, 50000));
         // 상품들 묶음 추가
-        item_list.add(new ShopItemPackage("내 사이즈와 같은 회원의 인기상품",shopItem3));
+        item_list3.add(new ShopItemPackage("내 사이즈와 같은 회원의 인기상품",shopItem3));
     }
 
 

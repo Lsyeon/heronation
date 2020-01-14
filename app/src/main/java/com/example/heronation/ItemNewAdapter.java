@@ -37,27 +37,11 @@ public class ItemNewAdapter extends RecyclerView.Adapter<ItemNewAdapter.ViewHold
     /* position에 해당하는 데이터를 뷰홀더의 아이템뷰에 표시 */
     @Override
     public void onBindViewHolder(@NonNull ItemNewAdapter.ViewHolder holder, int position) {
-        if(position<=1) {
-            //수평 리사이클러뷰 어댑터
-            ItemHorizontalAdapter adapter = new ItemHorizontalAdapter(itemList_List.get(position).getShopItems(), context);
-            /* 수직 리사이클러뷰의 하나의 아이템에 수평 리사이클러뷰의 아이템을 수평 방향으로 배치 설정, 어댑터 지정
-             * (ex)  수평 리사이클러뷰
-             *       수평 리사이클러뷰
-             * 2개의 수평 리사이클러뷰가 보여서 수직 리사이클러뷰가 됨
-             * 즉, 여기서 수직 리사이클러뷰의 하나의 아이템에 들어가는 수평 리사이클러뷰를 수평으로 지정을해주고
-             * 수직 리사이클러뷰의 하나의 아이템을 설정하는 어댑터를 수평리사이클러뷰어댑터로 설정해준다.
-             * */
-            holder.recyclerView.setHasFixedSize(true);
-            holder.recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
-            holder.recyclerView.setAdapter(adapter);
-            holder.packageName.setText(itemList_List.get(position).getPackageName());
-        }
-        else{
+
             ItemHorizontalAdapter adapter = new ItemHorizontalAdapter(itemList_List.get(position).getShopItems(), context);
             holder.recyclerView.setLayoutManager(new GridLayoutManager(context,2,GridLayoutManager.VERTICAL,false));
             holder.recyclerView.setAdapter(adapter);
             holder.packageName.setText(itemList_List.get(position).getPackageName());
-        }
 
     }
 

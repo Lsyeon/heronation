@@ -84,10 +84,11 @@
             android:id="@+id/favorite_button"
             android:background="#ffffff"
             android:layout_margin="4dp"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:padding="4dp"
             android:scaleType="centerInside"
-            android:src="@drawable/favorite_star"
+            android:src="@drawable/selector_star"
             android:layout_alignParentRight="true"
             />
 
