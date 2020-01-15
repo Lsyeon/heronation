@@ -6,17 +6,18 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
-public class MypageActivity extends AppCompatActivity {
+public class myPageLoginActivity extends AppCompatActivity {
     /* 상단 메뉴 버튼을 눌렀을 때 뜨는 레이아웃을 위한 변수들 */
     private DrawerLayout drawerLayout;
     private View drawerView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +25,14 @@ public class MypageActivity extends AppCompatActivity {
         /* 상태표시바를 삭제해주는 작업 */
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_mypage);
+        setContentView(R.layout.activity_my_page_login);
 
+        String id = "아이디 찾기";
+        TextView findid = (TextView) findViewById(R.id.mypage_findId_text);
+        findid.setText(Html.fromHtml("<u>" + id + "</u>"));
+        String pw = "비밀번호 찾기";
+        TextView findpw = (TextView) findViewById(R.id.mypage_findpassward_text);
+        findpw.setText(Html.fromHtml("<u>" + pw + "</u>"));
 
 
         /* 상단바 메뉴 드로워 */
@@ -81,10 +88,11 @@ public class MypageActivity extends AppCompatActivity {
      * 찜 버튼을 눌렀을 때, Wishlist Activity 이동
      * 마이 페이지 버튼을 눌렀을 때, Mypage Activity 이동
      */
-    public void Click_mypage_login_btn(View view){
-        Intent intent=new Intent(this, myPageLoginActivity.class);
+    public void Click_mypage_signup_btn(View view){
+        Intent intent=new Intent(this, loginPageActivity.class);
         startActivity(intent);
     }
+
     public void Click_itemButton(View view){
         Intent intent=new Intent(this, ItemActivity.class);
         startActivity(intent);
@@ -94,7 +102,6 @@ public class MypageActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void Click_measurementButton(View view){
-
         Intent intent=new Intent(this,MeasurementActivity.class);
         startActivity(intent);
     }

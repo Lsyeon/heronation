@@ -11,10 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ItemSearchActivity"></activity>
-        <activity android:name=".userModifyActivity"></activity>
+        <activity android:name=".myPageLoginActivity"></activity>
+        <activity android:name=".ItemSearchActivity" />
+        <activity android:name=".userModifyActivity" />
         <activity android:name=".ShopRankingSearchActivity" />
-        <activity android:name=".myPageConnectingActivity"/>
+        <activity android:name=".myPageConnectingActivity" />
         <activity android:name=".loginPageActivity" />
         <activity android:name=".FilterPopUpActivity" />
         <activity android:name=".MeasurementActivity" />
